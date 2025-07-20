@@ -21,4 +21,4 @@ This project simulates a real-world environment with departmental separation (Sa
 
 Ref 1 OU Structure
 
-<img width="641" height="463" alt="OU_Structure" src="https://github.com/user-attachments/assets/b35489da-f7c7-43da-8421-70818fa8fd22" />
+![OU_Structure](Documentation/OU_Structure.png)

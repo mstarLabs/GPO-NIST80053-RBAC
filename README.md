@@ -109,3 +109,12 @@ Key Policies Applied:
 - Desktop Restrictions
 - Security Group Access
 
+---
+
+## Skills Practiced
+
+- Active Directory OU Design, creating department specific OUs
+- Role Based Access Control, using department specific security groups
+- Group Policy Management, resticting system tools based on user OUs
+- Configuring login banner; AU-8
+- Security Hardening, using GPOs disabling unnecessary admin tool; AC-6

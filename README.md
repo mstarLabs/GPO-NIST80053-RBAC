@@ -1,4 +1,4 @@
-# Sales-HR-GPO-AccessControl
+# GPO-NIST80053-RBAC
 
 This project simulates a real-world environment with departmental separation (Sales and HR) to apply GPO restrictions, enforce access control via security groups, and implement login banners to align with NIST 800‑53.
 

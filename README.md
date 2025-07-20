@@ -61,12 +61,18 @@ Ref 2: Sales Share Permissions
 
 ![Sales_Share_Permissions](Documentation/Sales_Share_Permissions.png)
 
+Ref 3: Sales Share Security
+
+![Sales_Share_Security](Documentation/Sales_Share_Security.png)
+
 
 ---
 
 ## Compliance: Login Banner (AU-8)
 
-![Login Banner](Documentation/Login_Banner.png)
+Ref 4: Login Banner
+
+![Login Banner](Documentation/Logon_Banner.png)
 
 ---
 
@@ -74,6 +80,10 @@ Ref 2: Sales Share Permissions
 
 ### Group Policy Results (Sales User)
 `gpresult_sales.html` included in `/Documentation`.
+
+Ref 5: Sales Group Policy Results
+
+![Sales_GroupPolicyResults](Documentation/Sales_GroupPolicyResults.png)
 
 Key Policies Applied:
 - Login Banner

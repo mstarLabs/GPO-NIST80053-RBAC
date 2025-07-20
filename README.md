@@ -1,36 +1,37 @@
 # Sales-HR-GPO-AccessControl
 
-This project simulates a real-world environment with departmental separation (Sales and HR) to apply GPO restrictions, enforce access control via security groups, and implement login banners for compliance (AU-8). Built in a virtual lab using VirtualBox and Windows Server.
+This project simulates a real-world environment with departmental separation (Sales and HR) to apply GPO restrictions, enforce access control via security groups, and implement login banners to align with NIST 800‑53.
 
 ---
 
-## Features
-- Organizational Units for HR and Sales users
-- Security groups (`HR_ReadAccess`, `Sales_ReadAccess`)
-- NTFS folder permissions mapped to AD groups
-- GPOs restricting command prompt, regedit, control panel
-- Login banner for compliance and auditing
+## Overview
+**Devices Used:** `Windows Server 2019`, `Windows 10`
+- Devices are from same lab as past projects.
+- DC was configured to follow NIST 800-53 standards and NIST RMF
+
+---
+
+## NIST 800-53 Mapping
+| Control              | Mechanism                    |
+|----------------------|------------------------------|
+| AC‑2, AC‑3	         | AD groups + NTFS permissions |
+| AC‑6	               | GPO desktop restrictions     |
+| AU‑8	               | Login banner                 |
+| CM‑2	               | GPO baseline vs. actual VM   |
 
 ---
 
 ## OU Design
+Lab.local was configured with separate OUs for each department. This also includes an OU for department endpoints to maintain separation.
 - `Lab-Users/HR_Users`
 - `Lab-Users/Sales_Users`
 - `Lab-SecurityGroups`
-- `Lab-Computers` (future scalable design)
+- `Lab-Computers`
+- `Lab-Computer/Sales_Computers`
 
 Ref 1: OU Structure
 
 ![OU_Structure](Documentation/OU_Structure.png)
-
----
-
-## GPOs
-| Name                           | Linked To      | Key Settings                           |
-|-------------------------------|----------------|----------------------------------------|
-| SalesUsers-DesktopRestrictions| Sales_Users OU | Disable CMD, Regedit, Control Panel    |
-| HRUsers-DesktopRestrictions   | HR_Users OU    | Similar restrictions                   |
-| Login Banner GPO              | Computers OU or Domain | Interactive logon text and title     |
 
 ---
 
@@ -41,7 +42,11 @@ Stored in `Documentation/GroupMemberships.csv`
 |------------|-----------------------------------------|
 | Lab Admin  | Domain Users, Administrators            |
 | Sales Test | Domain Users, Sales_ReadAccess          |
-| HR Test    | Domain Users, HR_ReadAccess             |
+| HR Test    | Domain Users, HR_ReadOnly               |
+
+Security groups were created to manage file access permissions. Secuirty group is given access to share folders while users are then added to security groups. All access to shares should be handeled via a security group assignment.
+
+Ref 2: 
 
 ---
 
@@ -68,11 +73,27 @@ Ref 3: Sales Share Security
 
 ---
 
-## Compliance: Login Banner (AU-8)
+## GPOs
+| Name                           | Linked To      | Key Settings                           |
+|-------------------------------|----------------|----------------------------------------|
+| SalesUsers-DesktopRestrictions| Sales_Users OU | Disable CMD, Regedit, Control Panel    |
+| HRUsers-DesktopRestrictions   | HR_Users OU    | Similar restrictions                   |
+| Login Banner GPO              | Computers OU or Domain | Interactive logon text and title     |
 
-Ref 4: Login Banner
+Within Group Policy Management on DC-01 a GPO `SalesUsers-DesktopRestrictions` and `HRUsers-DesktopRestrictions` were created. Settings in the GPOs disabled Control Panel(Settings), Command Prompt, and Registry Editor for non admins. Along with program restrications department endpoints were linked to the policy to enforce a login banner.
+
+Ref 2: Group Policy Management Structure
+
+![GPMC_Structure](Documentation/GPMC_Structure.png)
+
+Ref 3: Login Banner
 
 ![Login Banner](Documentation/Logon_Banner.png)
+
+---
+
+
+
 
 ---
 

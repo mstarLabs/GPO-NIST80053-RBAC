@@ -46,11 +46,14 @@ Stored in `Documentation/GroupMemberships.csv`
 
 Security groups were created to manage file access permissions. Secuirty group is given access to share folders while users are then added to security groups. All access to shares should be handeled via a security group assignment.
 
-Ref 2: 
+Ref 2: Security Group Sales Memebers
+
+![SG_Sales_Memebers](Documentation/SG_Sales_Memebers.png)
 
 ---
 
 ## Folder Permissions
+Share folders are department segregated for security. Sales users only have access to the Sales folder; access grated via security group. 
 
 **Sales Folder**:
 - Location: `C:\Shares\Sales`
@@ -62,14 +65,13 @@ Ref 2:
 - Group: `HR_ReadAccess`
 - Access: Read-only
 
-Ref 2: Sales Share Permissions
+Ref 3: Sales Share Permissions
 
 ![Sales_Share_Permissions](Documentation/Sales_Share_Permissions.png)
 
-Ref 3: Sales Share Security
+Ref 4: Sales Share Security
 
 ![Sales_Share_Security](Documentation/Sales_Share_Security.png)
-
 
 ---
 
@@ -92,12 +94,8 @@ Ref 3: Login Banner
 
 ---
 
-
-
-
----
-
 ## Results
+Verification of GPO enforcement in line with configurations. 
 
 ### Group Policy Results (Sales User)
 `gpresult_sales.html` included in `/Documentation`.
@@ -111,8 +109,3 @@ Key Policies Applied:
 - Desktop Restrictions
 - Security Group Access
 
----
-
-## Notes
-- Computers should be moved from `Computers` to `Lab-Computers` for scoped GPOs.
-- Group membership listing was manually validated.

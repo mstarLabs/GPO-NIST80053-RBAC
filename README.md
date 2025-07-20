@@ -59,7 +59,7 @@ Stored in `Documentation/GroupMemberships.csv`
 
 Ref 2: Sales Share Permissions
 
-![Sales_Share_Permissions]
+![Sales_Share_Permissions](Documentation/Sales_Share_Permissions.png)
 
 
 ---

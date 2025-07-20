@@ -1,0 +1,4 @@
+Name,SamAccountName,MemberOf
+Lab Admin,ladmin,Domain Users; Administrators
+Sales Test,stest,Domain Users; Sales_ReadAccess
+HR Test,htest,Domain Users; HR_ReadAccess

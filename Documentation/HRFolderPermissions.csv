@@ -1,0 +1,5 @@
+"FileSystemRights","AccessControlType","IdentityReference","IsInherited","InheritanceFlags","PropagationFlags"
+"FullControl","Allow","CREATOR OWNER","False","ContainerInherit, ObjectInherit","InheritOnly"
+"FullControl","Allow","NT AUTHORITY\SYSTEM","False","ContainerInherit, ObjectInherit","None"
+"FullControl","Allow","LAB\vboxuser","False","ContainerInherit, ObjectInherit","None"
+"Read, Synchronize","Allow","LAB\HR_ReadOnly","False","ContainerInherit, ObjectInherit","None"
